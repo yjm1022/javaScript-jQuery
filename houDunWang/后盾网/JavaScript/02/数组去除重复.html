@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			var hd =["a","b","c","d","e","f","a","a","b","b","e","r","a","c","z","w"];
+			function qcf(hd){
+				for (var i=0;i<hd.length;i++) {
+					for (var j=i+1;j<hd.length;j++) {
+						if(hd[i] == hd[j]){
+							hd.splice(j,1);
+							j--;
+						}
+					}
+				}
+				return hd;
+			}
+			
+		var h = qcf(hd);
+		document.write(h);
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

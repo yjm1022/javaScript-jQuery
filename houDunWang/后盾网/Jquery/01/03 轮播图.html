@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#box{
+				border: 1px solid palegoldenrod;
+				width: 1300px;
+				height: 600px;
+				margin: 0 auto;
+				position: relative;
+			}
+			#box img{
+				width: 1300px;
+				height: 600px;
+				position: absolute;
+			}
+			#box ul{
+				position: absolute;
+				left: 630px;
+				bottom: 40px;
+			}
+			          
+			#box ul li{
+				list-style: none;
+				width: 22px;
+				height: 22px;
+				background:plum;
+				float: left;
+				margin-right: 10px;
+				/*border-radius: 6px;   直角变圆角  */
+				border-radius: 50%;
+			}
+			
+		</style>
+		<script type="text/javascript" src="../../../js/jquery-1.8.0.min.js" ></script>
+		<script>
+			$(function(){
+				
+				var c = 0;
+				
+				function run(){
+					c++;
+					if(c==5){
+						c=0;
+					}
+//					$("#box img").eq(c).show();
+//					$("#box img").eq(c).siblings("img").hide();
+					// stop() 方法停止当前正在运行的动画。
+					// fadeIn() 方法使用淡入效果来显示被选元素，假如该元素是隐藏的
+					// fadeOut() 方法使用淡出效果来隐藏被选元素，假如该元素是隐藏的
+					$("#box img").eq(c).stop().fadeIn(500).siblings("img").stop().fadeOut(500);
+					
+					$("#box ul li").eq(c).css({"background":"red"}).siblings("li").css({"background":"plum"})
+					
+				}
+				
+				
+				// 设置定时器
+				var timer = setInterval(run,3000);
+				//当鼠标指针穿过元素时，会发生 mouseenter 事件
+				$("#box ul li").mouseenter(function(){
+					//	清除定时器
+					clearInterval(timer);
+					//  获取移入的li序号
+					c = $(this).index();
+					
+					$("#box img").eq(c).fadeIn().siblings("img").fadeOut();
+					
+					$("#box ul li").eq(c).css({"background":"red"}).siblings("li").css({"background":"plum"})
+				});
+				
+				// 当鼠标指针离开元素时，会发生 mouseleave 事件
+				$("#box ul li").mouseleave(function(){
+					timer = setInterval(run,3000);
+				})
+				
+				
+			})
+			
+		</script>
+	</head>
+	<body>
+		<div id="box">
+			<img src="../../JavaScript/04/image/014.jpg" />
+			<img src="../../JavaScript/04/image/024.jpg" />
+			<img src="../../JavaScript/04/image/013.jpg" />
+			<img src="../../JavaScript/04/image/025.jpg" />
+			<img src="../../JavaScript/04/image/016.jpg" />
+			<ul>
+				<li style="background: red;"></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+	</body>
+</html>

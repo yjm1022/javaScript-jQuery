@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			window.onload = function(){
+				var huakuai = document.getElementById("huakuai");
+				
+				huakuai.onmousemove = function(){
+					document.title = huakuai.value;
+				}
+				
+				/* onchange  用于下拉框，颜色面板 */
+				document.getElementById("color").onchange = function(){
+					alert(this.value);
+					
+				}
+				
+			}
+			
+		</script>
+	</head>
+	<body>
+			<form action="" method="post">
+				姓名:<input type="text" name="name" /><br />
+				密码:<input type="password" name="password" /><br />
+				邮箱:<input type="email" name="email"/><br />
+				网址:<input type="url" name="url" /><br />
+				<!-- step="1"  每次增加1          value="1"默认值   -->
+				数字:<input type="number" min="1" max="20"  step="1" value="1"/><br />
+				<br />
+				<input type="range" min="1" max="20" step="1" value="10" id="huakuai"/>
+				<br />
+				时间:<input type="date" />
+				<br />
+				<!-- search 用于搜索框  -->
+				<input type="search" />
+				<br />
+				<input type="color" id="color" />
+				<br />
+				<input type="submit" value="提交"/>
+			</form>
+	</body>
+</html>

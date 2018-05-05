@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>盒子外边距</title>
+		<style>
+			#catr{
+				margin-right: 20px;    /* 盒子右外边距20px */
+			}
+			#baozi{
+				margin-left: 40px;		/* 盒子左外边距20px   左右外边距会相加  */
+			}
+			
+			#a1{
+				margin-bottom: 50px;	/* 盒子底部外边距50px */
+			}
+			#a2{
+				margin-top: 20px;		/* 盒子头部外边距20px   上下外边距合并    取最大值*/
+			}
+			
+			#a3{
+				margin: 20px auto;      /* aut 让 div 居中 */
+			}
+			div{
+				width: 400px;
+				height: 250px;
+				border: 2px solid;
+			}
+		</style>
+	</head>
+	<body>
+		<img src="../../img/001.jpg" width="400px" height="250px" id="catr"/>
+		<img src="../../img/002.jpg" width="400px" height="250px" id="baozi"/>
+		
+		<div id="a1" height="250px" id="catr" style="background: yellow;"> </div>
+		<div id="a2" height="250px" id="catr" style="background: red;"></div>
+		
+		<div id="a3" height="250px" id="catr" style="background: red;"></div>
+	</body>
+</html>

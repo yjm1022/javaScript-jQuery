@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			
+		</style>
+		<script>
+			window.onload = function(){
+				var btn = document.getElementById("btn");
+				var catr = document.getElementById("catr");
+				var sta = 1;
+				
+				btn.onclick = function(){
+					if(sta == 1){
+						catr.style.display = "none";
+						sta = 2;
+					}else if(sta == 2){
+						catr.style.display = "block";
+						sta = 1;
+					}
+				}
+				
+			}
+		</script>
+	</head>
+	<body>
+		<input type="button" value="快来点我" id="btn" />
+		<br /><br />
+		<img src="../../../img/001.jpg" id="catr"/>
+	</body>
+</html>

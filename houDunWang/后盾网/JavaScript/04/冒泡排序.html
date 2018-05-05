@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			var num = [1,2,3,4,5,74,546,2,235,332,34,5,76,56,324,2,454,53,22,34524,5,32];
+			
+			for(var i=0;i<num.length-1;i++){
+				for(var j=0;j<num.length-1;j++){
+					if(num[j] > num[j+1]){
+						var nu = num[j];
+						num[j] = num[j+1];
+						num[j+1] = nu;
+					}
+				}
+			}
+			document.write(num);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

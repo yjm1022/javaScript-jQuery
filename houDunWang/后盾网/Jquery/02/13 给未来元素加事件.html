@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="../js/jquery-1.8.3.min.js" ></script>
+		<script>
+			$(function(){
+				$("#btn").click(function(){
+					$(".box").append("<h2>hello word</h2>");
+				})
+				
+				
+				$(".box").on("click","h2",function(){
+					alert("哈哈哈哈哈哈哈");
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<input type="button" id="btn" value="点击我" />
+		<div class="box">
+			<h2>1111111111</h2>
+			<h2>2222222222</h2>
+			<h2>3333333333</h2>
+			<h2>44444444</h2>
+			<h2>444444444</h2>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<style>
+			.hd{
+				background: red;
+				color: white;
+			}
+		</style>
+		
+		<script>
+			document.write("<table border='1'>")
+				
+				for(var i=1;i<=16;i++){
+					if(i%2 == 1){
+						document.write("<tr class='hd'>");
+					}else{
+						document.write("<tr>");
+					}
+						for(var j=1;j<=6;j++){
+							document.write("<td>大展宏图</td>");
+						}
+					document.write("</tr>")
+				}
+				
+			document.write("</table>")
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>

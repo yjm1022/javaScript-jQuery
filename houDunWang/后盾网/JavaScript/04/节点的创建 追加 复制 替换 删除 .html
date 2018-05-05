@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#ht{
+				height: 300px;
+				width: 400px;
+				border: 2px solid palegoldenrod;
+			}
+		</style>
+		<script>
+			window.onload = function(){
+				var btn = document.getElementById("btn");
+				var ht = document.getElementById("ht");
+				var title = document.getElementById("title");
+				var box = ht.getElementsByTagName("h3");
+				btn.onclick = function(){
+					// 创建新的标签
+					var obj = document.createElement("h3");
+					// 给新的标签添加内容
+					obj.innerHTML="hello word";
+					// 给新标签添加属性
+					//obj.setAttribute("class","ht");
+					// 将obj追加到ht后面
+					//ht.appendChild(obj);
+					
+					// 把已有的标签放到div里面
+					//ht.appendChild(title)
+					
+					// 把title 放到某个元素前
+					//ht.insertBefore(title,box[1])
+					
+					// 删除某个元素
+					ht.removeChild(box[0]);
+					
+					// 替换元素
+					//ht.replaceChild(title,box[3]);
+					
+					// 复制节点
+					//var newobj = title.cloneNode(true);
+					//ht.appendChild(newobj);
+					
+					
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<input type="button" id="btn" value="点我啊" />
+		<h1 id="title">my name id "h1"</h1>
+		<br /><br />
+		<div id="ht">
+			<h3>1111111111111111</h3>
+			<h3>2222222222222222</h3>
+			<h3>3333333333333333</h3>
+			<h3>4444444444444444</h3>
+			<h3>5555555555555555</h5>
+		</div>
+	</body>
+</html>

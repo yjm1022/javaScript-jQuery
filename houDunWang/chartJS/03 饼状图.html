@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>饼状图</title>
+		<script src="../js/Chart.min.js"></script>
+	</head>
+	<body>
+		<canvas id="myChart" width="400" height="400"></canvas>
+		<script type="text/javascript">
+			
+			var ctx = document.getElementById("myChart").getContext("2d");
+		
+			var data = [
+				{
+					value: 30,//数据值
+					color:"#F38630", //背景色
+					highlight:"red",//鼠标移入背景颜色
+                	label:'阿里巴巴'//文字标签
+				},
+				{
+					value : 50,
+					color : "#E0E4CC"
+				},
+				{
+					value : 100,
+					color : "#69D2E7"
+				}			
+			]
+			
+			//Pie.defaults
+			var options = {
+				 //是否显示每段行程（即扇形区，不为true则无法看到后面设置的边框颜色）
+                    segmentShowStroke : true,
+                    //设置每段行程的边框颜色
+                    segmentStrokeColor : "#fff",
+                    //心啊是每段扇区边框的宽度
+                    segmentStrokeWidth :2,
+                    //Boolean - 是否执行动画
+                    animation : true,
+                    //Number - 动画时间
+                    animationSteps : 60,
+                    //String - 动画的效果
+                    animationEasing : "easeOutBounce",
+                    //Boolean -是否旋转动画
+                    animateRotate : true,
+                    //Boolean - 是否动画缩放饼图中心（效果不错）
+                    animateScale : true,
+                    //Function - 火动画完成时执行的函数
+                    onAnimationComplete : null
+			}
+			
+			var MyNewChart = new Chart(ctx).Pie(data,options);
+		</script>
+	</body>
+</html>

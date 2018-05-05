@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#tab{
+				width: 600px;
+				height: 500px;
+				border: 2px solid palegoldenrod;
+				margin: 20px auto;
+				position: relative;
+			}
+			#tab ul li{
+				list-style: none;
+				float: left;
+				width: 200px;
+				height: 50px;
+				line-height: 50px;
+				font-size: 30px;
+				text-align: center;
+			}
+			#tab .con{
+				width: 599px;
+				height: 400px;
+				margin-top: 80px;
+				position: absolute;
+				display: none;
+			}
+		</style>
+		
+		<script>
+			window.onload = function(){
+				var tab = document.getElementById("tab");
+				var lis = tab.getElementsByTagName("li");
+				var cons =tab.getElementsByClassName("con");
+				
+				for (var i=0;i<lis.length;i++) {
+					
+					lis[i].xuhao = i;
+					
+					lis[i].onmouseover = function(){
+						for (var i=0;i<lis.length;i++) {
+							cons[i].style.display = "none";
+						}
+						cons[this.xuhao].style.display = "block";
+					}
+				}
+				
+			}
+			
+		</script>
+		
+	</head>
+	<body>
+		<div id="tab">
+			<ul>
+				<li style="background: palegreen;">1111</li>
+				<li style="background: palegoldenrod;">2222</li>
+				<li style="background: palevioletred;">3333</li>
+			</ul>
+			<div class="con" style="background: palegreen;display: block;"></div>
+			<div class="con" style="background: palegoldenrod;"></div>
+			<div class="con" style="background: palevioletred;"></div>
+		</div>
+	</body>
+</html>

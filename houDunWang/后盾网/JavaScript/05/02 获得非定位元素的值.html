@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: o;
+				padding: 0;
+			}
+			#box1{
+				width: 1000px;
+				height: 800px;
+				border: 2px solid red;
+				margin: 100px;
+			}
+			#box2{
+				width: 800px;
+				height: 600px;
+				border: 2px solid palegreen;
+				margin: 100px;
+			}
+			#box3{
+				width: 600px;
+				height: 400px;
+				border: 2px solid peru;
+				margin: 100px;
+			}
+		</style>
+		<script>
+			window.onload = function(){
+				var box3 = document.getElementById("box3");
+				var l = box3.offsetLeft;
+				alert(l);
+			}
+		</script>
+	</head>
+	<body>
+		<div id="box1">
+			<div id="box2">
+				<div id="box3"></div>
+			</div>
+		</div>
+	</body>
+</html>

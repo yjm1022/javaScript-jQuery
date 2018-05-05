@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			
+			
+			window.onload = function(){
+				
+				function djs(){
+					var now_time = new Date(2018,0,0,00,00,00); 
+					var fur_time = new Date();
+					// 计算两个时间的时间差
+					var diff = now_time.getTime() - fur_time.getTime();
+					// 计算天
+					var day = parseInt(diff/(60*60*24*1000));
+					// 获得计算完天数还剩余的毫秒数
+					diff = diff%(60*60*24*1000);
+					
+					// 计算小时
+					var hours = parseInt(diff/(60*60*1000));
+					// 获得计算完小时还剩余的毫秒数
+					diff = diff%(60*60*1000);
+					
+					// 计算分钟
+					var minutes = parseInt(diff/(60*1000));
+					// 获得计算完分钟还剩余的毫秒数
+					diff = diff%(60*1000);
+					
+					// 计算秒数
+					var seconds = parseInt(diff/1000);
+				
+					var time = document.getElementById("time").getElementsByTagName("span");
+					time[0].innerHTML = day;
+					time[1].innerHTML = hours;
+					time[2].innerHTML = minutes;
+					time[3].innerHTML = seconds;
+				}
+				// 页面刷新就调用一次
+				djs();
+				// 倒计时定时器
+				setInterval(djs,1000);
+				
+			}
+			
+			
+		</script>
+	</head>
+	<body>
+		<h1 id="time">
+			距离2018年还有
+			<span></span>天
+			<span></span>小时
+			<span></span>分钟
+			<span></span>秒
+		</h1>
+	</body>
+</html>

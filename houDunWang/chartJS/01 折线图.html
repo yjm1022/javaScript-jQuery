@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>折线图</title>
+		<script src="../js/Chart.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<canvas id="myChart" width="400" height="400"></canvas>
+		<script type="text/javascript">
+			
+			    var ctx = document.getElementById("myChart").getContext("2d");
+			
+			    //数据结构（数据参数设置）
+			    var data = {
+			        //折线图需要为每个数据点设置一标签。这是显示在X轴上。
+			        labels: ["January", "February", "March", "April", "May", "June", "July"],
+			        //数据集（y轴数据范围随数据集合中的data中的最大或最小数据而动态改变的）
+			        datasets: [{
+			                    fillColor: "rgba(220,220,220,0.5)", // rgb背景填充色 0-255    a最后是透明度0-1
+			                    strokeColor: "rgba(220,220,220,1)", //曲线路径颜色
+			                    pointColor: "rgba(220,220,220,1)", //数据点颜色
+			                    pointStrokeColor: "#fff", //数据点边框颜色
+			                    data : [65,59,90,81,56,55,40]//对象数据
+			                }, {
+			                    fillColor: "rgba(151,187,205,0.5)",
+			                    strokeColor: "rgba(151,187,205,1)",
+			                    pointColor: "rgba(151,187,205,1)",
+			                    pointStrokeColor: "#fff",
+			                    data : [28,48,40,19,96,27,100]
+			                }]
+			            };
+				
+				var options = {
+                //网格线是否在数据线的上面
+                scaleOverlay : false,
+
+                //是否用硬编码重写y轴网格线
+                scaleOverride : false,
+
+                //** Required if scaleOverride is true **
+                //y轴刻度的个数
+                scaleSteps : null,
+
+                //y轴每个刻度的宽度
+                scaleStepWidth : null,
+
+                // Y 轴的起始值
+                scaleStartValue : null,
+                // Y/X轴的颜色
+                scaleLineColor: "rgba(0,0,0,.1)",   
+                // X,Y轴的宽度
+                scaleLineWidth: 1,
+                // 刻度是否显示标签, 即Y轴上是否显示文字
+                scaleShowLabels: true,
+                // Y轴上的刻度,即文字
+                scaleLabel: "<%=value%>",
+                // 字体
+                scaleFontFamily: "'Arial'",
+                // 文字大小
+                scaleFontSize: 12,
+                // 文字样式
+                scaleFontStyle: "normal",
+                // 文字颜色
+                scaleFontColor: "#666",
+                // 是否显示网格
+                scaleShowGridLines: true,
+                // 网格颜色
+                scaleGridLineColor: "rgba(0,0,0,.05)",
+                // 网格宽度
+                scaleGridLineWidth:2,
+                // 是否使用贝塞尔曲线? 即:线条是否弯曲
+                bezierCurve: true,
+                // 是否显示点数
+                pointDot: true,
+                // 圆点的大小
+                pointDotRadius:5,
+                // 圆点的笔触宽度, 即:圆点外层白色大小
+                pointDotStrokeWidth: 2,
+                // 数据集行程(连线路径)
+                datasetStroke: true,
+                // 线条的宽度, 即:数据集
+                datasetStrokeWidth: 2,
+                // 是否填充数据集
+                datasetFill: true,
+                // 是否执行动画
+                animation: true,
+                // 动画的时间
+                animationSteps: 60,
+                // 动画的特效
+                animationEasing: "easeOutQuart",
+                // 动画完成时的执行函数
+                /*onAnimationComplete: null*/
+            }
+				
+			//这种方式是只加载数据集，（缺省options）不修改默认参数（简称法一）	
+			var MyNewChart = new Chart(ctx).Line(data,options); 
+
+		</script>
+	</body>
+</html>

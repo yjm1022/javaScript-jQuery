@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="../../../js/jquery-1.8.0.min.js" ></script>
+		<script>
+			$(function(){
+				$("#qx").click(function(){
+					$("#list :checkbox").prop("checked",true);				
+				});
+				
+				$("#qbx").click(function(){
+					$("#list :checkbox").removeProp("checked")
+				});
+				
+				//  checked 默认为false
+				
+				//反选的第一种方法
+//				$("#fx").click(function(){
+//					// 获得选中状态下的元素
+//					var objs = $("#list :checked");
+//					$("#list :checkbox").prop("checked",true);
+//					objs.removeProp("checked");
+//				});
+//				反选的第二种方法
+				$("#fx").click(function(){
+					// i 当前元素的序号         val是checked的属性值 true	或 false
+					$("#list :checkbox").prop("checked",function(i,val){
+						return !val;
+					})
+				});
+				
+			});
+		</script>
+	</head>
+	<body>
+		<input type="button" id="qx" value="全选"/>
+		<input type="button" id="qbx" value="全不选" />
+		<input type="button" id="fx" value="反选"/>
+		<table id="list">
+			<tr>
+				<td><input type="checkbox"/></td>
+				<td>111111111111</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" /></td>
+				<td>111111111111</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox"  /></td>
+				<td>111111111111</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox"  /></td>
+				<td>111111111111</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox"  /></td>
+				<td>111111111111</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox"  /></td>
+				<td>111111111111</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox"  /></td>
+				<td>111111111111</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox"  /></td>
+				<td>111111111111</td>
+			</tr>
+			
+		</table>
+	</body>
+</html>

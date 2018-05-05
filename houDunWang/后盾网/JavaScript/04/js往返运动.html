@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding:0;
+			}
+			img{
+				width: 100px;
+				height: 50px;
+				position: absolute;
+			}
+			
+		</style>
+		
+		<script>
+			window.onload = function(){
+				
+				var btn = document.getElementById("btn");
+				var fj = document.getElementById("fj"); 
+				btn.onclick = function(){
+					var suDu = 5;
+					var time = setInterval(function(){
+						var old_fj = fj.style.left
+						var new_fj = parseInt(old_fj)+suDu;
+						fj.style.left = new_fj+"px";
+						
+						if(new_fj == 1000 || new_fj == 0){
+							suDu = suDu* -1;
+						}
+						
+						/*if(new_fj == 1200){
+							suDu = -10;
+						}
+						if(new_fj == 0){
+							suDu = 10;
+						}*/
+						
+					
+					},10);
+				}
+			}
+			
+		</script>
+		
+		
+	</head>
+	<body>
+		<input type="button" id="btn" value="快点我啊"></input>
+		<br /><br />
+		<img src="../../../img/feiji.gif" id="fj" style="left: 0px;"/>
+	</body>
+</html>

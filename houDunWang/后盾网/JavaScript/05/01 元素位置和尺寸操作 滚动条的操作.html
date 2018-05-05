@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>元素位置和尺寸操作 滚动条的操作</title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#box{
+				width: 400px;
+				height: 300px;
+				background: palegreen;
+				/* 绝对定位 */
+				position: absolute;
+				left: 300px;
+				top: 200px;
+			}
+		</style>
+		<script>
+			window.onload = function(){
+				var box = document.getElementById("box");
+				// 获取到定位元素的left 和top值
+				var l = box.offsetLeft;
+				var t = box.offsetTop;
+				//alert(t);
+				
+				var height = box.offsetHeight;
+				var width = box.offsetWidth;
+				alert(width);
+				
+			}
+		</script>
+	</head>
+	<body>
+		<div id="box"></div>
+		
+		
+	</body>
+</html>

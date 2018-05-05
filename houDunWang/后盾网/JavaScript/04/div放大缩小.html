@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#dd{
+				background: palegreen;
+				margin: 100px auto;
+			}
+		</style>
+		<script>
+			
+			window.onload = function(){
+				
+				var btn = document.getElementById("btn");
+				var dd = document.getElementById("dd");
+				var time;
+				btn.onclick = function(){
+					clearInterval(time);
+					var suDu = 10;
+					time = setInterval(function(){
+						var old_dd_width = dd.style.width;
+						var old_dd_height = dd.style.height;
+						
+						var new_dd_width = parseInt(old_dd_width) + suDu;
+						var new_dd_height = parseInt(old_dd_height) + suDu;
+						
+						dd.style.width = new_dd_width + "px";
+						dd.style.height = new_dd_height +"px";
+						
+						if(new_dd_width == 500 && new_dd_height == 500 || new_dd_width == 200 && new_dd_height == 200){
+							suDu = suDu*-1;
+						}
+						
+						
+					},100);
+				}
+				
+			}
+			
+		</script>
+	</head>
+	<body>
+		<input type="button" value="点击我！！！" id="btn" />
+		<div id="dd" style="width: 200px;height: 200px;"></div>
+	</body>
+</html>

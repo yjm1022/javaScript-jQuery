@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			var _arr = ['旅行箱', '旅行箱', '小米', '大米'];  
+			var _res = []; 
+			//方法用于对数组的元素进行排序
+			_arr.sort();  
+			for (var i = 0; i < _arr.length;) {  
+			    var count = 0;  
+			    for (var j = i; j < _arr.length; j++) {  
+			        if (_arr[i] == _arr[j]) {  
+			            count++;  
+			        }  
+			    }  
+			    _res.push([_arr[i], count]);  
+			    i += count;  
+			} 
+			//_res 二维数维中保存了 值和值的重复数  
+			var _newArr = [];  
+			for (var i = 0; i < _res.length; i++) {  
+			    //console.log(_res[i][0] + "重复次数:" + _res[i][1]);  
+			    _newArr.push(_res[i][0] + 'x' + _res[i][1]);  
+			}  
+			// console.log() 让内容在浏览器上控制台显示
+			//console.log(_newArr);
+			
+			alert(_newArr);
+		</script>
+	</body>
+</html>

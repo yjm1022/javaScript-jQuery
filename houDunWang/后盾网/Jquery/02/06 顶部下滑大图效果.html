@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			
+			img{
+				display: block;
+				margin: 0 auto;	
+			}
+			#box{
+				width: 599px;
+				height: 300px;
+				border: 2px solid palegoldenrod;	
+				margin: 0 auto;
+			}
+			
+			
+			#top{
+				margin-top: -215px;
+			}
+			
+		</style>
+		
+		
+		<script type="text/javascript" src="../../../js/jquery-1.8.0.min.js" ></script>
+		<script>
+			$(function(){
+				$("#top").animate({"margin-top":"0px"},3000,
+					function(){
+						// delay 一般写在运动前 表示让后面的运动延迟多久再执行
+						$("#top").delay(3000).animate({"margin-top":"-215px"},3000)
+					}
+				)
+				
+				/* var date = "101369814|算什么男人|4558|周杰伦|852856|哎呦，不错哦|2496580|289|6|1|0|11580808|4632445|320000|0|31933476|32002118|6708265|6989683|0|001Js78a40BZU6|0025NhlN2yWrP4|001uqejs3d6EID|31|0";
+				var str = date.split("|");
+				alert(str[20]);
+ */
+				
+			});
+		</script>
+	</head>
+	<body>
+		<img src="../../../img/images/04.jpg" id="top"/>
+		<div id="box"></div>
+	</body>
+</html>

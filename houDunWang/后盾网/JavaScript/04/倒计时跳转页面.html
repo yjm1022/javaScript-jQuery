@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			window.onload = function(){
+				
+				/* getElementsByTagName("span")[0]   获取到的数组，[0]代表第一个  */
+				var span = document.getElementById("h").getElementsByTagName("span")[0];
+			
+				setInterval(function(){
+					var old_num = span.innerHTML;
+					
+					var new_num = old_num - 1;
+					
+					span.innerHTML = new_num;
+					if(new_num == 0){
+						location.assign("https://www.baidu.com/?tn=96928074_hao_pg");
+					}
+					
+				},1000);
+			}
+			
+		</script>
+	</head>
+	<body>
+		<h1 id="h">亲，该页面被外星人抓走了，将在<span>5</span>秒后跳转到百度页面</h1>
+	</body>
+</html>

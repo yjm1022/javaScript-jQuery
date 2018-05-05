@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0px;
+				padding: 0px;
+			}
+			div{
+				height: 100px;
+				width: 200px;
+			}
+			#one{
+				background: yellow;
+			}
+			#tow{
+				background: red;
+				/* 相对定位 
+				 		相对于原来的位置而言
+				 * 		元素在文档流里的位置还会被保留
+				 * 		 	右和下是正方向      左和上是负方向
+				 * 		相对定位可以理解是完全脱离文档流的
+				 * 		但实际上是没有完全脱离
+				 * */
+				position: relative;
+				left: 100px;
+				top: 150px;
+			}
+			#three{
+				background: green;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="one">
+			
+		</div>
+		<div id="tow">
+			
+		</div>
+		<div id="three">
+			
+		</div>
+	</body>
+</html>

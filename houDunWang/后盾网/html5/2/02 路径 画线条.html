@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#canvas{
+				background: palegoldenrod;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="canvas" height="400px" width="800px"></canvas>
+		
+		<script>
+			var canvas = document.getElementById("canvas");
+			var cv = canvas.getContext("2d");
+			// 开启路径
+			cv.beginPath();
+			// 触笔开始的地方
+			cv.moveTo(20,50);
+			// 触笔结束的地方
+			cv.lineTo(300,300);
+			//设置拐角类型
+			cv.lineJoin ="round";
+			// 给线条增加颜色
+			cv.strokeStyle = "#FF0000";
+			// 给线条增加宽度
+			cv.lineWidth = 10;
+			// 绘制线条
+			cv.stroke();
+			
+			cv.lineTo(350,30);
+			cv.stroke();
+			
+			cv.lineTo(500,140);
+			cv.stroke();
+		</script>
+	</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#one{
+				height: 300px;
+				width: 300px;
+				background-color: palegoldenrod;
+				margin:0 auto;
+			}
+			
+		</style>
+		<script>
+			window.onload = function(){
+				var one = document.getElementById("one");
+				if(document.all){// ie 浏览器
+					var v = one.currentStyle.height;
+					//var v =one.currentStyle.width;
+					//var v = one.currentStyle.backgroundColor;
+				}else{// w3c 浏览器
+					var v = getComputedStyle(one,null).height;
+					//var v = getComputedStyle(one,null).width;
+					//var v = getComputedStyle(one,null).backgroundColor;
+				}
+				alert(v)
+			}
+			
+		</script>
+		
+	</head>
+	<body>
+		
+		<div id="one"></div>
+		
+	</body>
+</html>

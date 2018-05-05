@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="../../../js/jquery-1.8.0.min.js" ></script>
+		<script>
+			$(function(){
+				$("#btn").click(function(){
+						// 在2000毫秒内变为透明度是30%
+						$("#imgs").fadeTo(2000,0.3);
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<input type="button" id="btn" value="点击我" />
+		<div>
+			<img src="../../../img/001.jpg" id="imgs"/>
+		</div>
+	</body>
+</html>

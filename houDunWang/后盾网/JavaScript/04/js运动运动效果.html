@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#fj{
+				width: 100px;
+				height: 50px;
+				/* 绝对定位 相对于他的上一个定位父元素 */
+				position: absolute;
+			}
+		</style>
+		<script>
+			window.onload = function(){
+				var btn = document.getElementById("btn");
+				var fj = document.getElementById("fj");
+				// 定义一个time 
+				var time;
+				btn.onclick = function(){
+					// 再次点击按钮 清楚原有计时器  解决点击多次速度一直增加的问题
+					clearInterval(time);
+					time = setInterval(function(){
+						
+						/* 获取到原来的值*/
+						var old_fj = fj.style.left;
+						
+						/* 赋值给新值 */
+					 	var new_fj = parseInt(old_fj)+5; 
+						
+						/*  把新值返回回去 */
+						fj.style.left = new_fj+"px";
+						
+						/* 判断新值到了800*/
+						if(new_fj == 800){
+							/* 清除掉运动 */
+							clearInterval(time);
+						}
+						
+					},100);
+					
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<input type="button" id="btn" value="快来点我！" />
+		<br /><br />
+		<img src="../../../img/feiji.gif" id="fj" style="left:0px;"/>
+		
+	</body>
+</html>

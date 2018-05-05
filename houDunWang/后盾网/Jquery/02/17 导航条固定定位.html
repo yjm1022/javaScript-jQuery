@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>0</title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			div{
+				margin: 0 auto;
+			}
+			div.a1{
+				width: 800px;
+				height: 200px;
+				background: palegreen;
+			}
+			div.a2{
+				width: 800px;
+				height: 240px;
+				background: red;
+				
+			}
+			div.a3{
+				width: 800px;
+				height: 1000px;
+				background: plum;
+			}
+			
+			div#box.num{
+				position: fixed;
+				left: 50%;
+				top: 0;
+				margin-left:-400px;
+			}
+		</style>	
+		<script type="text/javascript" src="../js/jquery-1.8.3.min.js" ></script>
+		<script type="text/javascript">
+			$(function(){
+				$(window).scroll(function(){
+					var t = $(document).scrollTop();
+					document.title = t;
+					if (t>200) {
+						$("#box").addClass("num");
+					}else{
+						$("#box").removeClass("num");
+					}
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<div class="a1"></div>
+		<div class="a2 num" id="box"></div>
+		<div class="a3"></div>
+	</body>
+</html>

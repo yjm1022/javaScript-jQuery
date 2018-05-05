@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			
+		    var num1 =	prompt("请输入第一个数")*1;
+			var charset = prompt("请输入运算符号   + — * /");
+			var num2 = prompt("请输入第二个数")*1;
+			
+			switch(charset){
+				case "-":
+					var re = num1 - num2;
+					break;
+				case "+":
+					var re = num1 + num2;
+					break;
+				case "*":
+					var re = num1 * num2;
+					break;
+				case "/":
+					var re = num1 / num2;
+					break;
+			}
+			
+			document.write(re);
+		</script>
+		
+	</head>
+	<body>
+	</body>
+</html>

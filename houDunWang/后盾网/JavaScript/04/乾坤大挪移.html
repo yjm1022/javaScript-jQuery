@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#left{
+				width: 400px;
+				height: 200px;
+				border: 1px solid palegoldenrod;
+			}
+			#right{
+				width: 400px;
+				height: 200px;
+				border: 1px solid palegreen;
+			}
+		</style>
+		<script>
+			window.onload = function(){
+				var btn = document.getElementById("btn");
+				var left = document.getElementById("left");
+				var right = document.getElementById("right");
+				var sta = 1;
+				btn.onclick = function(){
+					if(sta == 1){
+						var left_con = left.innerHTML;
+						right.innerHTML = left_con; 
+						left.innerHTML = "";
+						sta = 2;
+					}else if(sta == 2){
+						var right_con = right.innerHTML;
+						left.innerHTML = right_con;
+						right.innerHTML = "";
+						sta = 1;
+					}
+					
+				}
+				
+			}
+		</script>
+	</head>
+	<body>
+		<div id="left">
+			kkkkkkkkkkkkkkkkkkkkkkkkkk
+		</div>
+		<br />
+		<input type="button" value="点我啊" id="btn"/>
+		<br />
+		<br />
+		<div id="right"></div>
+	</body>
+</html>

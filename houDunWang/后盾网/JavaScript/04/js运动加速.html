@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>js运动加速</title>
+		<style>
+			*{
+				margin: 0;
+				padding:0;
+			}
+			img{
+				width: 100px;
+				height: 50px;
+				position: absolute;
+			}
+			
+			
+		</style>
+		<script>
+			
+			window.onload = function(){
+				var btn = document.getElementById("btn");
+				var fj = document.getElementById("fj");
+				btn.onclick = function(){
+					var suDu = 10;
+					setInterval(function(){
+						//suDu++;
+						suDu = suDu*1.1;
+						var old_fj = fj.style.left
+						var new_fj = parseInt(old_fj)+suDu;
+					
+						fj.style.left = new_fj + "px";
+						
+						
+					},100);
+				}	
+			}
+			
+			
+		</script>
+	</head>
+	<body>
+		<input type="button" value="快点我！" id="btn" />
+		<br /><br />
+		<img src="../../../img/feiji.gif" style="left: 0px;" id="fj" />
+	</body>
+</html>

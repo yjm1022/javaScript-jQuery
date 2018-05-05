@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#{
+				margin: 0;
+				padding: 0;
+			}
+			#canvas{
+				background: palegoldenrod;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="canvas" height="400px" width="800px"></canvas>
+		
+		<script>
+			var canvas = document.getElementById("canvas");
+			var cv = canvas.getContext("2d");
+			
+			cv.beginPath();
+			cv.moveTo(20,20);
+			cv.lineTo(20,350);
+			cv.strokeStyle = "#FF0000";
+			cv.lineWidth = 10;
+			cv.stroke();
+			
+			cv.lineTo(500,350);
+			cv.stroke();
+			
+			// 关闭路径（将形状闭合）
+			cv.closePath();
+			cv.stroke();
+		</script>
+	</body>
+</html>

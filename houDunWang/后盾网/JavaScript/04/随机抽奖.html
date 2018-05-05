@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			img{
+				width: 400px;
+				height: 300px;
+			}
+		</style>
+		<script>
+			
+			window.onload = function(){
+				var start = document.getElementById("start");
+				var end = document.getElementById("end");
+				var img = document.getElementById("img");
+				
+				var images = ["image/006.jpg",
+								"image/007.jpg",
+								"image/008.jpg",
+								"image/009.jpg",
+								"image/010.jpg",
+								"image/011.jpg",
+								"image/012.jpg",
+								"image/013.jpg",
+								"image/014.jpg",
+								"image/015.jpg",
+								"image/016.jpg",
+								"image/017.jpg",
+							 ];
+				var time;			 
+				start.onclick = function(){
+					clearInterval(time);
+					time = setInterval(function(){
+						var num = Math.floor(Math.random()*(images.length-1+1-0)+0);
+						img.setAttribute("src",images[num])
+					},10);
+				}	
+				
+				end.onclick = function(){
+					clearInterval(time);
+					var num = Math.random()*10;
+					if(num < 7){
+						img.setAttribute("src","image/005.jpg");
+					}
+				}
+							 
+							 
+			}
+			
+			
+			
+		</script>
+	</head>
+	<body>
+		<input type="button" value="开始抽奖" id="start" />
+		<input type="button" value="停止抽奖" id="end" />
+		<div >	
+			<img src="image/005.jpg" id="img" />
+		</div>
+	</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#box{
+				width: 790px;
+				height: 340px;
+				/*border: 4px solid palegoldenrod;*/
+				margin: 20px auto;
+				position: relative;
+				/* 隐藏溢出部分  */
+				overflow: hidden;
+			}
+			
+			#box .con{
+				width: 7110px ;	
+				height: 340px;
+				/*border: 1px solid red;*/
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+			#box .con img{
+				float: left;
+			}
+			
+			#box ul{
+				display: block;
+				bottom: 0px;
+				right: 0px;
+				position: absolute;
+			}
+			
+			#box ul li{
+				list-style: none;
+				float: left;
+				width: 50px;
+				height: 30px;
+				/* 文字高度 */
+				line-height: 30px;
+				/* 文字居中 */
+				text-align: center;
+				color: white;
+				background: black;
+				/* 设置透明度  */
+				opacity: 0.3;
+				margin-left: 10px;
+			}
+			
+			#box ul li:hover{
+				/* 加下滑线  */
+				text-decoration: blink;
+				color: red;
+			}
+		</style>
+		<script type="text/javascript" src="../../../js/jquery-1.8.0.min.js" ></script>
+		<script>
+			$(function(){
+				var c = 0;
+				
+				// 用来对应能否被点击      1为不能      2为能
+				var sta = 2;
+				
+				// 控制自动轮播的函数
+				function run(){
+					c++;
+					if(c==9){
+						// 当c=9 的时候让 ，con 的left瞬间变为0
+						$("#box .con").css({"left":0});
+						c=1;
+					}
+					// c 每加1,left就-790px
+					var lf = c*-790;
+					// 当 left减完790，这个时候不可以点击li 
+					sta = 1;
+					
+					$("#box .con").animate({"left":lf+"px"},500,function(){
+						sta = 2;
+					});
+					
+					if(c == 8){
+						// 当c=8 时，让li的0好元素选中，透明度变为0.7，让它同为 li 的兄弟都变为透明度为0.3
+						$("#box ul li").eq(0).css({"opacity": "0.7"}).siblings("li").css({"opacity":"0.3"});
+					}else{
+						$("#box ul li").eq(c).css({"opacity": "0.7"}).siblings("li").css({"opacity":"0.3"});
+					}
+				}
+				// 调用 自动轮播的函数
+				var timer = setInterval(run,1000);
+				var t;
+				//  点击 li 切换图片
+				$("#box ul li").click(function(){
+					// sta == 1 时让点击，返回回去
+					if(sta == 1){
+						return;
+					}
+					// 清除定时器
+					clearTimeout(t);
+					// 设置定时器   点击了，再过400毫秒调用  自动轮播的函数
+					 t = setTimeout(function(){
+						timer = setInterval(run,1000);
+					},400);
+					
+					
+					// 清除定时器  
+					clearInterval(timer);
+					
+					// 获得当前li序号
+					c = $(this).index();
+					
+					var left = c*-790;
+					
+					$("#box .con").stop().animate({"left":left+"px"},300);
+					
+					$(this).css({"opacity": "0.7"}).siblings("li").css({"opacity":"0.3"});
+					
+				});
+				
+				
+				
+				
+				
+				
+			})
+		</script>
+	</head>
+	<body>
+		<div id="box">
+			<div class="con">
+				<!--img[src=../../../img/images/$.png]*2-->
+				<img src="jd/01.jpg" alt="" />
+				<img src="jd/02.jpg" alt="" />
+				<img src="jd/03.jpg" alt="" />
+				<img src="jd/04.jpg" alt="" />
+				<img src="jd/05.jpg" alt="" />
+				<img src="jd/06.jpg" alt="" />
+				<img src="jd/07.jpg" alt="" />
+				<img src="jd/08.jpg" alt="" />
+				<img src="jd/01.jpg" alt="" />
+			</div>
+			<ul>
+				<li style="opacity: 0.7;">图片1</li>
+				<li>图片2</li>
+				<li>图片3</li>
+				<li>图片4</li>
+				<li>图片5</li>
+				<li>图片6</li>
+				<li>图片7</li>
+				<li>图片8</li>
+			</ul>
+		</div>
+	</body>
+</html>
